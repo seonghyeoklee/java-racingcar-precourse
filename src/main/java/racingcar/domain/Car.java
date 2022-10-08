@@ -3,13 +3,13 @@ package racingcar.domain;
 import static racingcar.type.ErrorMessageType.NOT_ALLOW_GREATER_THAN_FIVE;
 
 public class Car {
-
-    public static final int MAX_LENGTH = 5;
+    private static final int MAX_LENGTH = 5;
 
     private final String name;
 
     public Car(String name) {
         this.name = name;
+        validateCarNameLength();
     }
 
     public void validateCarNameLength() {
