@@ -2,6 +2,8 @@ package racingcar.domain.input;
 
 import static racingcar.type.ErrorMessageType.INPUT_NOT_ALLOW_BLANK;
 
+import racingcar.exception.InputWrongValueException;
+
 public interface Input<T> {
 
     T create();
@@ -19,13 +21,13 @@ public interface Input<T> {
 
     static void isWhitespace(char charAt) {
         if (Character.isWhitespace(charAt)) {
-            throw new IllegalArgumentException(INPUT_NOT_ALLOW_BLANK.getMessage());
+            throw new InputWrongValueException(INPUT_NOT_ALLOW_BLANK.getMessage());
         }
     }
 
     static void validateNullOrEmpty(String input) {
         if (input == null || input.length() == 0) {
-            throw new IllegalArgumentException(INPUT_NOT_ALLOW_BLANK.getMessage());
+            throw new InputWrongValueException(INPUT_NOT_ALLOW_BLANK.getMessage());
         }
     }
 

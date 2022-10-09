@@ -2,6 +2,8 @@ package racingcar.domain;
 
 import static racingcar.type.ErrorMessageType.NOT_ALLOW_GREATER_THAN_FIVE;
 
+import racingcar.exception.InputWrongValueException;
+
 public class Car {
     private static final int MAX_LENGTH = 5;
 
@@ -14,7 +16,7 @@ public class Car {
 
     public void validateCarNameLength() {
         if (this.name.length() > MAX_LENGTH) {
-            throw new IllegalArgumentException(NOT_ALLOW_GREATER_THAN_FIVE.getMessage());
+            throw new InputWrongValueException(NOT_ALLOW_GREATER_THAN_FIVE.getMessage());
         }
     }
 
