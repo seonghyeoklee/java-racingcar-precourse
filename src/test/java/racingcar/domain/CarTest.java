@@ -27,4 +27,14 @@ class CarTest {
                 })
                 .withMessageContaining(NOT_ALLOW_GREATER_THAN_FIVE.getMessage());
     }
+
+    @Test
+    @DisplayName("자동차가 전진한다.")
+    void carMovingForward() {
+        Car car = new Car("pobi");
+        assertThat(car.getMovingCount()).isEqualTo(0);
+        car.movingForward();
+        assertThat(car.getMovingCount()).isEqualTo(1);
+    }
+
 }

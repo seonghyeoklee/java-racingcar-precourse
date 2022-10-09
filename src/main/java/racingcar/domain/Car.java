@@ -8,9 +8,11 @@ public class Car {
     private static final int MAX_LENGTH = 5;
 
     private final String name;
+    private int movingCount;
 
     public Car(String name) {
         this.name = name;
+        this.movingCount = 0;
         validateCarNameLength();
     }
 
@@ -20,14 +22,23 @@ public class Car {
         }
     }
 
+    public void movingForward() {
+        this.movingCount++;
+    }
+
     public String getName() {
         return name;
+    }
+
+    public int getMovingCount() {
+        return movingCount;
     }
 
     @Override
     public String toString() {
         return "Car{" +
                 "name='" + name + '\'' +
+                ", movingCount=" + movingCount +
                 '}';
     }
 }

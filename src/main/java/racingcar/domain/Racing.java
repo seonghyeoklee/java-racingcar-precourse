@@ -1,17 +1,21 @@
 package racingcar.domain;
 
-public class PlayGame {
+import static racingcar.type.NumberRangeType.validateRange;
+
+public class Racing {
     private static final int MOVING_FORWARD = 4;
 
     private boolean movingForward;
 
-    public PlayGame(int random) {
+    public Racing(int random) {
+        validateRange(random);
         if (random >= MOVING_FORWARD) {
             this.movingForward = true;
         }
     }
-    
+
     public boolean isMovingForward() {
         return this.movingForward;
     }
+
 }
