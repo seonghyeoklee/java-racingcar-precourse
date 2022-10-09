@@ -10,6 +10,7 @@ import racingcar.domain.input.InputCarName;
 
 class RacingGameTest {
     private RacingGame game;
+    private Cars cars;
     private Car pobi;
     private Car crong;
     private Car honux;
@@ -17,8 +18,7 @@ class RacingGameTest {
     @BeforeEach
     void setUp() {
         InputCarName inputCarName = new InputCarName("pobi,crong,honux");
-        Cars cars = inputCarName.create();
-
+        cars = inputCarName.create();
         game = new RacingGame(new TryCount("3"), cars);
 
         List<Car> players = cars.getCars();
@@ -44,5 +44,4 @@ class RacingGameTest {
         assertThat(crong.getMovingCount()).isEqualTo(2);
         assertThat(honux.getMovingCount()).isEqualTo(1);
     }
-
 }
