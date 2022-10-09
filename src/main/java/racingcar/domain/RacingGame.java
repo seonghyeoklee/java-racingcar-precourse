@@ -3,6 +3,7 @@ package racingcar.domain;
 import static camp.nextstep.edu.missionutils.Randoms.pickNumberInRange;
 import static racingcar.type.NumberRangeType.END_INCLUSIVE;
 import static racingcar.type.NumberRangeType.START_INCLUSIVE;
+import static racingcar.view.OutputView.printRacingCar;
 
 public class RacingGame {
     private final TryCount tryCount;
@@ -16,6 +17,7 @@ public class RacingGame {
     public void racingStart() {
         for (int i = 0; i < this.tryCount.getCount(); i++) {
             movingCars();
+            printRacingCar(cars);
         }
     }
 

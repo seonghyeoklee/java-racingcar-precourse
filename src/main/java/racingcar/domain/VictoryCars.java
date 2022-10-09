@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class VictoryCars {
+    private static final String SEPARATOR = ", ";
+
     private final List<Car> victoryCars = new ArrayList<>();
 
     public VictoryCars(Cars cars) {
@@ -43,8 +45,12 @@ public class VictoryCars {
 
     @Override
     public String toString() {
-        return "VictoryCars{" +
-                "victoryCars=" + victoryCars +
-                '}';
+        StringBuilder victory = new StringBuilder();
+        for (Car car : this.victoryCars) {
+            victory.append(car.getName());
+            victory.append(SEPARATOR);
+        }
+        victory.deleteCharAt(victory.lastIndexOf(SEPARATOR));
+        return victory.toString();
     }
 }

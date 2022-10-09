@@ -2,12 +2,16 @@ package racingcar.exception;
 
 public class InputWrongValueException extends IllegalArgumentException {
 
+    private static final String ERROR = "[ERROR] ";
+
+    private final String message;
+
     public InputWrongValueException(String message) {
         super(message);
-        printMessage(message);
+        this.message = message;
     }
 
-    private void printMessage(String message) {
-        System.out.println("[ERROR] " + message);
+    public void printMessage() {
+        System.out.println(ERROR + this.message);
     }
 }

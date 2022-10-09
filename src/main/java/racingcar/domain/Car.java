@@ -26,6 +26,18 @@ public class Car {
         this.movingCount++;
     }
 
+    public void printMovingForward() {
+        System.out.println(this.name + " : " + convertHyphen());
+    }
+
+    private String convertHyphen() {
+        StringBuilder result = new StringBuilder();
+        for (int i = 0; i < this.movingCount; i++) {
+            result.append("-");
+        }
+        return result.toString();
+    }
+
     public String getName() {
         return name;
     }
